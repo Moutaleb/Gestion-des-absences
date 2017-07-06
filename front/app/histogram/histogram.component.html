@@ -1,0 +1,55 @@
+    
+    <div class="container">
+        <div class="row">
+        <form class="form-inline">
+<fieldset>
+
+<!-- Form Name -->
+<legend>Form Name</legend>
+
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="departement">Departement</label>
+  <div class="col-md-3">
+    <select id="departement" name="departement" class="form-control" ng-model="$ctrl.departement.departement">
+      <option ng-repeat="dep in $ctrl.departement.departement track by $index" value="{{ dep }}">{{ dep }}</option>
+    </select>
+  </div>
+</div>
+
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="year">Année</label>
+  <div class="col-md-2">
+    <select id="year" name="year" class="form-control" ng-model="$ctrl.departement.year">
+      <option ng-repeat="year in $ctrl.departement.year track by $index" value="{{ year }}">{{ year }}</option>
+    </select>
+  </div>
+</div>
+
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="month">Mois</label>
+  <div class="col-md-2">
+    <select id="month" name="month" class="form-control" ng-model="$ctrl.departement.month">
+      <option ng-repeat="month in $ctrl.departement.month track by $index" value="">{{ month }}</option>
+    </select>
+  </div>
+</div>
+
+
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-1 control-label" for=""></label>
+  <div class="col-md-1">
+    <a class="btn btn-primary" href="" ng-click="$ctrl.createUrl()"><span class="glyphicon glyphicon-search"></span></a>
+  </div>
+</div>
+</fieldset>
+</form>
+    </div>
+    </div>
+    <br>
+    <div class="container" id="chart-container">FusionCharts XT will load here!</div>
+

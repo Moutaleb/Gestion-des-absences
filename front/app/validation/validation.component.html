@@ -1,0 +1,33 @@
+<div class="container">
+    <table class="table table-striped" >
+    	<thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prenom</th>
+            	<th>Date de début</th>
+                <th>Date de fin</th>
+                <th>Type</th>
+                <th>Statut</th>
+                <th>Id</th>
+            </tr>
+        </thead>
+        
+        <tbody ng-repeat="donnees in $ctrl.donnees track by $index">
+                <tr ng-repeat="absences in donnees track by $index">
+                    <td>{{ absences.nom }}</td>
+                    <td>{{ absences.prenom }}</td>
+                    <td>{{ absences.dateDebut }}</td>
+                    <td>{{ absences.dateFin }}</td>
+                    <td>{{ absences.type }}</td>
+                    <td>{{ absences.statut }}</td>
+                    <td>{{ absences.id }}</td>
+                    <td> <a ng-click="$ctrl.validateRequest(absences.id)"><span class="glyphicon glyphicon-ok"> </a></span></td>
+                    <td> <a ng-click="$ctrl.rejectRequest(absences.id)"><span class="glyphicon glyphicon-remove"> </a></span></td>
+                </tr>
+            
+
+        </tbody>
+    </table>
+</div>
+
+<!--ng-repeat="absence in donnees track by $index" <pre>{{donnees}}</pre> -->

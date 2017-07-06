@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+    <link href="//cdn.rawgit.com/cornflourblue/angular-registration-login-example/master/app-content/app.css" rel="stylesheet" />
+    <title>Front</title>
+
+    <script src="/gestion-des-absences/bundle.js"></script>
+  
+
+    
+<script type="text/javascript" src="http://static.fusioncharts.com/code/latest/themes/fusioncharts.theme.fint.js?cacheBust=56"></script>
+<script type="text/javascript">
+  FusionCharts.ready(function(){
+    var fusioncharts = new FusionCharts({
+    type: 'stackedcolumn2d',
+    renderAt: 'chart-container',
+    width: '1200',
+    height: '500',
+    dataFormat: 'jsonurl',
+    dataSource: 'https://absences-api.cleverapps.io/histogram?departement=DSI/INDUS/Linux&month=06&year=2017'
+    }     
+);
+    fusioncharts.render();
+});
+</script>
+
+    
+    <!-- Context de déploiement pour Github Pages -->
+    <base href="/gestion-des-absences/">
+</head>
+<body ng-app="app" >
+    <authentification></authentification>
+    <div ng-view></div>
+    <body>
+</body>
+</html>

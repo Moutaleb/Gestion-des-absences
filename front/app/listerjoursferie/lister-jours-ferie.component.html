@@ -1,0 +1,35 @@
+<div class="container">
+
+    <h1>Jours fériés et RTT employeurs</h1>
+
+    <table class="table table-striped">
+    	<thead>
+            <tr>
+            	<th>Date</th>
+                <th>Type</th>
+                <th>Jour</th>
+                <th>Commentaires</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+        	<tr ng-repeat="jourFerie in $ctrl.joursFeries track by $index">
+        		<td>{{ jourFerie.date }}</td>
+        		<td>{{ jourFerie.type }}</td>
+        		<td>{{ jourFerie.jour }}</td>
+        		<td>{{ jourFerie.commentaire }}
+                    <span ng-if="$ctrl.utilisateur.role==='ADMIN'" class="glyphicon glyphicon-trash"></span>
+                    <span ng-if="$ctrl.utilisateur.role==='ADMIN'" class="glyphicon glyphicon-pencil"></span>
+               </td>
+        	</tr>
+
+        </tbody>
+    </table>
+
+    <a href="jour-ferie/nouvelle-demande">
+        <div id="nouvelledemande">
+            <h4 ng-if="$ctrl.utilisateur.role==='ADMIN'">Ajouter un jour ferié ou une RTT employeur </h4>
+            <button ng-if="$ctrl.utilisateur.role==='ADMIN'" class="btn btn-xs btn-primary"><span class="glyphicon glyphicon-plus"></span></button>
+        </div>
+    </a>
+</div>

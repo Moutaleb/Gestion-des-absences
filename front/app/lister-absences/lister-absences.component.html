@@ -1,0 +1,43 @@
+<div class="container">
+
+    <h1>Gestion des absences</h1>
+
+    <table class="table table-striped">
+    	<thead>
+            <tr>
+            	<th>Date de début</th>
+                <th>Date de fin</th>
+                <th>Type</th>
+                <th>Statut</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+        	<tr ng-repeat="absence in $ctrl.donnees.absences track by $index">
+        		<td>{{ absence.dateDebut }}</td>
+        		<td>{{ absence.dateFin }}</td>
+        		<td>{{ absence.type }}</td>
+        		<td>
+                    {{ absence.statut }}
+                    <span class="glyphicon glyphicon-trash"></span>
+                    <span class="glyphicon glyphicon-pencil"></span>
+                </td>
+        	</tr>
+        </tbody>
+    </table>
+
+    <a href="absences/nouvelle-demande">
+        <div id="demande">
+            <h4>Demander une absence</h4>
+            <button class="btn btn-xs btn-primary"><span class="glyphicon glyphicon-plus"></span></button>
+        </div>
+    </a>
+
+    <div id="compteurs">
+        <strong>Solde des compteurs :</strong>
+        <ul>
+            <li><strong>Congés : {{ $ctrl.donnees.congesPayes }}</strong></li>
+            <li><strong>RTT : {{ $ctrl.donnees.RTT }}</strong></li>
+        </ul>
+    </div>
+</div>

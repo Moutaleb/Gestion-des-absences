@@ -1,0 +1,51 @@
+<div class="container">
+	<h1>Demande d'absence</h1>
+
+	<form class="form-horizontal">
+	<fieldset>
+
+	<!-- Date de début-->
+	<div class="form-group">
+	  <label class="col-md-4 control-label" for="dateDebut">Date de début :</label>  
+	  <div class="col-md-4">
+	  <input type="date" id="dateDebut" name="dateDebut" ng-model="$ctrl.absence.dateDebut">
+	  </div>
+	</div>
+
+	<!-- Date de fin-->
+	<div class="form-group">
+	  <label class="col-md-4 control-label" for="dateFin">Date de fin :</label>  
+	  <div class="col-md-4">
+	  <input type="date" id="dateFin" name="dateFin" ng-model="$ctrl.absence.dateFin">
+	  </div>
+	</div>
+
+	<!-- Type de congé -->
+	<div class="form-group">
+	  <label class="col-md-4 control-label" for="type">Type de congé :</label>
+	  <div class="col-md-4">
+	    <select id="type" name="type" class="form-control" ng-model="$ctrl.absence.type">
+	      <option ng-repeat="type in $ctrl.types track by $index" value="{{ type }}">{{ type }}</option>
+	    </select>
+	  </div>
+	</div>
+
+	<!-- Motif -->
+	<div class="form-group">
+	  <label class="col-md-4 control-label" for="motif">Motif :</label>
+	  <div class="col-md-4">                     
+	    <textarea class="form-control" id="motif" name="motif" ng-model="$ctrl.absence.motif"></textarea>
+	  </div>
+	</div>
+
+	<div class="form-group">
+		<label class="col-md-4 control-label" for="button1id"></label>
+		<div class="col-md-8">
+	        <button id="button1id" name="button1id" class="btn btn-danger" ng-click="$ctrl.reset()">Annuler</button>
+	        <button id="button2id" name="button2id" class="btn btn-success" ng-click="$ctrl.ajouterAbsence()">Valider</button>
+	    </div>
+    </div>
+
+	</fieldset>
+	</form>
+</div>
